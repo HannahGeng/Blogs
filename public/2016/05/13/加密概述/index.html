@@ -6,15 +6,35 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://binngirl.com">
-  <title>加密概述 | Binngirl&#39;s blog</title>
+  <title>加密概述(网络资料整理) | Binngirl&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="article">
-<meta property="og:title" content="加密概述">
+  <meta name="description" content="一.MD5加密MD5主要特点是不可逆，相同数据的MD5值肯定一样，不同数据的MD5值不一样（也不是绝对的，但基本是不能一样的）。
+MD5算法还具有以下性质：
+1. **压缩性**：任意长度的数据，算出的MD5值长度都是固定的。
+2. **容易计算**：从原数据计算出MD5值很容易。
+3. **抗修改性**：对原数据进行任何改动，哪怕只修改1个字节，所得到的MD5值都有很大区别。
+4. **弱抗碰撞">
+<meta property="og:type" content="article">
+<meta property="og:title" content="加密概述(网络资料整理)">
 <meta property="og:url" content="http://binngirl.com/2016/05/13/加密概述/index.html">
 <meta property="og:site_name" content="Binngirl's blog">
-<meta property="og:updated_time" content="2017-02-21T01:33:29.000Z">
+<meta property="og:description" content="一.MD5加密MD5主要特点是不可逆，相同数据的MD5值肯定一样，不同数据的MD5值不一样（也不是绝对的，但基本是不能一样的）。
+MD5算法还具有以下性质：
+1. **压缩性**：任意长度的数据，算出的MD5值长度都是固定的。
+2. **容易计算**：从原数据计算出MD5值很容易。
+3. **抗修改性**：对原数据进行任何改动，哪怕只修改1个字节，所得到的MD5值都有很大区别。
+4. **弱抗碰撞">
+<meta property="og:image" content="http://olpg4gjcm.bkt.clouddn.com/base64%E5%8E%9F%E7%90%86%E5%9B%BE">
+<meta property="og:updated_time" content="2017-02-21T06:57:15.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="加密概述">
+<meta name="twitter:title" content="加密概述(网络资料整理)">
+<meta name="twitter:description" content="一.MD5加密MD5主要特点是不可逆，相同数据的MD5值肯定一样，不同数据的MD5值不一样（也不是绝对的，但基本是不能一样的）。
+MD5算法还具有以下性质：
+1. **压缩性**：任意长度的数据，算出的MD5值长度都是固定的。
+2. **容易计算**：从原数据计算出MD5值很容易。
+3. **抗修改性**：对原数据进行任何改动，哪怕只修改1个字节，所得到的MD5值都有很大区别。
+4. **弱抗碰撞">
+<meta name="twitter:image" content="http://olpg4gjcm.bkt.clouddn.com/base64%E5%8E%9F%E7%90%86%E5%9B%BE">
   
     <link rel="alternative" href="/atom.xml" title="Binngirl&#39;s blog" type="application/atom+xml">
   
@@ -151,7 +171,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      加密概述
+      加密概述(网络资料整理)
     </h1>
   
 
@@ -164,7 +184,57 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h3 id="一-MD5加密"><a href="#一-MD5加密" class="headerlink" title="一.MD5加密"></a>一.MD5加密</h3><p>MD5主要特点是不可逆，相同数据的MD5值肯定一样，不同数据的MD5值不一样（也不是绝对的，但基本是不能一样的）。</p>
+<p>MD5算法还具有以下性质：</p>
+<pre><code>1. **压缩性**：任意长度的数据，算出的MD5值长度都是固定的。
+2. **容易计算**：从原数据计算出MD5值很容易。
+3. **抗修改性**：对原数据进行任何改动，哪怕只修改1个字节，所得到的MD5值都有很大区别。
+4. **弱抗碰撞**：已知原数据和其MD5值，想找到一个具有相同MD5值的数据（即伪造数据）是非常困难的。
+5. **强抗碰撞**：想找到两个不同的数据，使它们具有相同的MD5值，是非常困难的。
+</code></pre><p>MD5虽然说是不可逆的 但是由于有网站<a href="http://www.cmd5.com" target="_blank" rel="external">cmd5.com</a>专门用来查询MD5码,所以有的简单的MD5码是可以在这里搜到源码的。</p>
+<p>为了让MD5码更加安全,涌现了很多其他方法 如加盐。盐要足够长足够乱，得到的MD5码就很难查到。</p>
+<p>终端代码：<code>$ echo -n abc|openssl md5</code> 给字符串abc加密。</p>
+<h3 id="二-base64加密"><a href="#二-base64加密" class="headerlink" title="二.base64加密"></a>二.base64加密</h3><p>在MIME格式的电子邮件中，base64可以用来将binary的字节序列数据编码成ASCII字符序列构成的文本。使用时，在传输编码方式中指定base64。使用的字符包括大小写字母各26个，加上10个数字，和加号“+”，斜杠“/”，一共64个字符，等号“=”用来作为后缀用途。</p>
+<p>完整的base64定义可见RFC 1421和RFC 2045。编码后的数据比原始数据略长，为原来的4/3。</p>
+<p>原理图如下<br><img src="http://olpg4gjcm.bkt.clouddn.com/base64%E5%8E%9F%E7%90%86%E5%9B%BE" alt=""></p>
+<p><strong>终端指令</strong>：<br>先cd 找到当前目录<br>加密：<code>$ base64 abc.png -o abc.txt</code> </p>
+<p>解密： <code>$ base64 abc.txt -o 123.png -D</code></p>
+<h3 id="三-对称加密算法"><a href="#三-对称加密算法" class="headerlink" title="三.对称加密算法"></a>三.对称加密算法</h3><p><strong>优点</strong>：算法公开、计算量小、加密速度快、加密效率高、可逆；</p>
+<p><strong>缺点</strong>：双方使用相同钥匙，安全性得不到保证；</p>
+<p><strong>现状</strong>：对称加密的速度比公钥加密快很多，在很多场合都需要对称加密，</p>
+<p>相较于DES和3DES算法而言，AES算法有着更高的速度和资源使用效率，安全级别也较之更高了，被称为下一代加密标准</p>
+<p><strong>nECB</strong> ：电子代码本，就是说每个块都是独立加密的</p>
+<p><strong>nCBC</strong> ：密码块链，使用一个密钥和一个初始化向量 (IV)对数据执行加密转换 </p>
+<p><strong>ECB和CBC区别</strong>：CBC更加复杂更加安全，里面加入了8位的向量（8个0的话结果等于ECB）。在明文里面改一个字母，ECB密文对应的那一行会改变，CBC密文从那一行往后都会改变。</p>
+<p><strong>ECB终端命令</strong>：</p>
+<p><code>$ openssl enc -des-ecb -K 616263 -nosalt -in msg1.txt -out msg1.bin</code></p>
+<p><strong>CBC终端命令</strong>：</p>
+<p><code>$ openssl enc -des-cbc -K 616263 -iv 0000000000000000 -nosalt -in msg1.txt -out msg2.bin</code></p>
+<h3 id="四-RSA加密"><a href="#四-RSA加密" class="headerlink" title="四.RSA加密"></a>四.RSA加密</h3><p><strong>RSA非对称加密算法</strong></p>
+<p>非对称加密算法需要两个密钥：公开密钥（publickey）和私有密钥（privatekey）</p>
+<p>公开密钥与私有密钥是一对，如果用公开密钥对数据进行加密，只有用对应的私有密钥才能解密；如果用私有密钥对数据进行加密，那么只有用对应的公开密钥才能解密。</p>
+<p><strong>特点</strong>：</p>
+<p>非对称密码体制的特点：算法强度复杂、安全性依赖于算法与密钥但是由于其算法复杂，而使得加密解密速度没有对称加密解密的速度快</p>
+<p>对称密码体制中只有一种密钥，并且是非公开的，如果要解密就得让对方知道密钥。所以保证其安全性就是保证密钥的安全，而非对称密钥体制有两种密钥，其中一个是公开的，这样就可以不需要像对称密码那样传输对方的密钥了</p>
+<p><strong>基本加密原理</strong>：</p>
+<p>(1)找出两个“很大”的质数：P &amp; Q</p>
+<p>(2)N = P * Q</p>
+<p>(3)M = (P – 1) * (Q – 1)</p>
+<p>(4)找出整数E，E与M互质，即除了1之外，没有其他公约数</p>
+<p>(5)找出整数D，使得E<em>D除以M余1，即 (E </em> D) % M = 1</p>
+<p>经过上述准备工作之后，可以得到：</p>
+<p>E是公钥，负责加密</p>
+<p>D是私钥，负责解密</p>
+<p>N负责公钥和私钥之间的联系</p>
+<p>加密算法，假定对X进行加密</p>
+<p>(X ^ E) % N = Y</p>
+<p>n根据费尔马小定义，根据以下公式可以完成解密操作</p>
+<p>(Y ^ D) % N = X</p>
+<p>但是RSA加密算法效率较差，对大型数据加密时间很长，一般用于小数据。</p>
+<p><strong>常用场景</strong>：</p>
+<p>分部要给总部发一段报文，先对报文整个进行MD5得到一个报文摘要，再对这个报文摘要用公钥加密。然后把报文和这个RSA密文一起发过去。</p>
+<p>总部接收到报文之后要先确定报文是否在中途被人篡改，就先把这个密文用私钥解密得到报文摘要，再和整个报文MD5一下得到的报文摘要进行对比 如果一样就是没被改过。</p>
+
       
 
       

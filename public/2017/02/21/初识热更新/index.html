@@ -6,14 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://binngirl.com">
-  <title>Archives: 2017 | Binngirl&#39;s blog</title>
+  <title>初识热更新 | Binngirl&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Binngirl's blog">
-<meta property="og:url" content="http://binngirl.com/archives/2017/index.html">
+  <meta name="description" content="每次提交版本都得等待一周到两周的审核时间，我是受不了这种速度了，于是决定研究有没有其他的方法跳过提交版本这个步骤，同样能够修复bug呢，于是找到了JSPatch，也许也有很多人觉得这是个很高大上的技术，其实不然，我们只需要在项目里引入极小的引擎文件，就可以使用 JavaScript 调用任何 Objective-C 的原生接口，替换任意 Objective-C 原生方法。当然呢，目前主要用于下发">
+<meta property="og:type" content="article">
+<meta property="og:title" content="初识热更新">
+<meta property="og:url" content="http://binngirl.com/2017/02/21/初识热更新/index.html">
 <meta property="og:site_name" content="Binngirl's blog">
+<meta property="og:description" content="每次提交版本都得等待一周到两周的审核时间，我是受不了这种速度了，于是决定研究有没有其他的方法跳过提交版本这个步骤，同样能够修复bug呢，于是找到了JSPatch，也许也有很多人觉得这是个很高大上的技术，其实不然，我们只需要在项目里引入极小的引擎文件，就可以使用 JavaScript 调用任何 Objective-C 的原生接口，替换任意 Objective-C 原生方法。当然呢，目前主要用于下发">
+<meta property="og:image" content="http://olpg4gjcm.bkt.clouddn.com/%E7%83%AD%E6%9B%B4%E6%96%B01">
+<meta property="og:image" content="http://olpg4gjcm.bkt.clouddn.com/%E7%83%AD%E6%9B%B4%E6%96%B02">
+<meta property="og:image" content="http://olpg4gjcm.bkt.clouddn.com/%E7%83%AD%E6%9B%B4%E6%96%B03">
+<meta property="og:updated_time" content="2017-02-21T07:25:00.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Binngirl's blog">
+<meta name="twitter:title" content="初识热更新">
+<meta name="twitter:description" content="每次提交版本都得等待一周到两周的审核时间，我是受不了这种速度了，于是决定研究有没有其他的方法跳过提交版本这个步骤，同样能够修复bug呢，于是找到了JSPatch，也许也有很多人觉得这是个很高大上的技术，其实不然，我们只需要在项目里引入极小的引擎文件，就可以使用 JavaScript 调用任何 Objective-C 的原生接口，替换任意 Objective-C 原生方法。当然呢，目前主要用于下发">
+<meta name="twitter:image" content="http://olpg4gjcm.bkt.clouddn.com/%E7%83%AD%E6%9B%B4%E6%96%B01">
   
     <link rel="alternative" href="/atom.xml" title="Binngirl&#39;s blog" type="application/atom+xml">
   
@@ -143,36 +151,66 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-初识热更新" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      初识热更新
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/02/21/初识热更新/" class="archive-article-date">
+
+        
+        <a href="/2017/02/21/初识热更新/" class="archive-article-date">
   	<time datetime="2017-02-21T07:17:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-21</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/02/21/初识热更新/">初识热更新</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>每次提交版本都得等待一周到两周的审核时间，我是受不了这种速度了，于是决定研究有没有其他的方法跳过提交版本这个步骤，同样能够修复bug呢，于是找到了<a href="https://github.com/bang590/JSPatch" target="_blank" rel="external">JSPatch</a>，也许也有很多人觉得这是个很高大上的技术，其实不然，我们只需要在项目里引入极小的引擎文件，就可以使用 JavaScript 调用任何 Objective-C 的原生接口，替换任意 Objective-C 原生方法。当然呢，目前主要用于下发 JS 脚本替换原生 Objective-C 代码，实时修复线上 bug。</p>
+<p>首先说一下JSPatch实现的内部原理：JsPatch能做到通过JS调用和改写OC方法最根本的原因是 Objective-C 是动态语言，OC上所有方法的调用、类的生成都通过 Objective-C Runtime 在运行时进行，我们可以通过类名和方法名反射得到相应的类和方法，也可以替换某个类的方法为新的实现，还可以新注册一个类，为类添加方法。所以 JSPatch 的原理就是：JS传递字符串给OC，OC通过 Runtime 接口调用和替换OC方法。这个很容易理解，JS的作用只是一个信使的作用，具体实现还是得靠我们OC,所以说OC还是世界上最美的语言，哈哈。</p>
+<p>同时在这里介绍一个比较好的网站 <a href="http://bang590.github.io/JSPatchConvertor/" target="_blank" rel="external">点这里</a>.这是一个OC转JS的一个工具网站。</p>
+<p>下面演示一下具体实现的步骤</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line">- (void)viewDidLoad</div><div class="line">&#123;</div><div class="line">    UITableView* tv = [[UITableView alloc]initWithFrame:self.view.bounds</div><div class="line">                                                 style:UITableViewStylePlain];</div><div class="line">    self.mqTableView = tv;</div><div class="line">    self.mqTableView.delegate = self;</div><div class="line">    self.mqTableView.dataSource = self;</div><div class="line">    [self.view addSubview:self.mqTableView];</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line">#pragma mark -- UITableViewDataSource</div><div class="line">- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section</div><div class="line">&#123;</div><div class="line">    return 3;</div><div class="line">&#125;</div><div class="line"></div><div class="line">- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath</div><div class="line">&#123;</div><div class="line">    static NSString* i=  @&quot;cell&quot;;</div><div class="line">    UITableViewCell* cell = [tableView  dequeueReusableCellWithIdentifier:i];</div><div class="line">    if (cell == nil ) &#123;</div><div class="line">        cell =[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault</div><div class="line">                                    reuseIdentifier:i];</div><div class="line">    &#125;</div><div class="line">    cell.textLabel.text = @&quot;meiqing&quot;;</div><div class="line">    cell.backgroundColor = [UIColor whiteColor];</div><div class="line">    return cell;</div><div class="line">&#125;</div><div class="line"></div><div class="line">- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath</div><div class="line">&#123;</div><div class="line">    self.dataSource = @[@&quot;1&quot;,@&quot;2&quot;];</div><div class="line">    肯定会超出数组范围导致 crash</div><div class="line">    NSString *content = self.dataSource[indexPath.row];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>显示的结果是这样的<br><img src="http://olpg4gjcm.bkt.clouddn.com/%E7%83%AD%E6%9B%B4%E6%96%B01" alt=""><br>上面的图片是没有修改时候的显示，当我点击第三行一定会闪退，怎么修复呢？这个时候就不用发版本了，服务器可以给我们传送一个js文件，文件里的内容是这样的：<br><img src="http://olpg4gjcm.bkt.clouddn.com/%E7%83%AD%E6%9B%B4%E6%96%B02" alt=""><br>同时，我们在APPDelegate里调用这个JS就可以了，如下：<br><img src="http://olpg4gjcm.bkt.clouddn.com/%E7%83%AD%E6%9B%B4%E6%96%B03" alt=""><br>再次运行就不会出现闪退了。</p>
 
-        <div class="article-info info-on-right">
-          
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="http://olpg4gjcm.bkt.clouddn.com/%E6%94%B6%E4%BB%98%E6%AC%BE.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -184,171 +222,88 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://binngirl.com/2017/02/21/初识热更新/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/02/06/对人工智能的一点看法/" class="archive-article-date">
-  	<time datetime="2017-02-06T12:06:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-06</time>
-</a>
-        </div>
-    	 
+<nav id="article-nav">
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/02/06/对人工智能的一点看法/">对人工智能的一点看法</a>
-    </h1>
+  
+    <a href="/2017/02/06/对人工智能的一点看法/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">对人工智能的一点看法</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+
+
+  
+    <div class="duoshuo"></div>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
 
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/01/16/git使用简单总结/" class="archive-article-date">
-  	<time datetime="2017-01-16T15:07:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-16</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/01/16/git使用简单总结/">git使用简单总结</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">iOS学习</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/01/11/运动给我势能/" class="archive-article-date">
-  	<time datetime="2017-01-11T14:49:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-11</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/01/11/运动给我势能/">运动给我势能</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/01/10/关于GCD/" class="archive-article-date">
-  	<time datetime="2017-01-10T14:44:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-10</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/01/10/关于GCD/">关于GCD</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">iOS学习</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -371,8 +326,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
